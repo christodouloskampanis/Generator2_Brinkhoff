@@ -14,8 +14,8 @@ public class ColorDefiner {
 	
 
 /**
- * Gibt die textuell angebene Farbe als "java.awt.Color" zürück.
- * @return ausgewählte Farbe
+ * Gibt die textuell angebene Farbe als "java.awt.Color" zÃ¼rÃ¼ck.
+ * @return ausgewÃ¤hlte Farbe
  * @param name Name der Farbe (black, blue, cyan, darkGray, gray, green, lightGray, magenta, orange, pink, red, white, yellow)
  */
 public static Color getColor (String name) {
@@ -48,7 +48,7 @@ public static Color getColor (String name) {
 	return getDefaultColor();
 }
 /**
- * Gibt die Standardfarbe zurück.
+ * Gibt die Standardfarbe zurÃ¼ck.
  * @return Standardfarbe
  */
 public static Color getDefaultColor () {
