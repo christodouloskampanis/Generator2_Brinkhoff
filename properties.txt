@@ -1,0 +1,30 @@
+! limits for input fields
+MIN_MAXTIME = 60
+MAX_MAXTIME = 60
+MAX_OBJCLASSES = 1
+MAX_OBJPERTIME = 30
+MAX_OBJBEGIN = 30
+MAX_EXTOBJCLASSES = 1
+MAX_EXTOBJPERTIME = 10
+MAX_EXTOBJBEGIN = 10
+
+! setting of the generator
+urlnez = oldenburgGen
+!urlnez = E:\\Programme\\Java\\ShowMap\\OL-Map\\oldenburgGen
+!urlnez = Daten\\oldenburgGen
+!waitingPeriod = 1
+!DSO
+VIZ
+outputFile = /home/ckabanis/Desktop/generator/output.xls
+!seed = 123
+
+! setting of the applet
+baseScaleFactor = 1250
+maxScale = 1
+minScale = 64
+scale = 64
+viewWidth = 500
+viewHeight = 500
+language = E
+color = white
+mapColor = white
