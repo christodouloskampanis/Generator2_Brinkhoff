@@ -4,7 +4,7 @@ package util;
  * Klasse zur Bereitstellung von Timern.
  * 
  * @version 1.00	02.12.98
- * @version	1.10	12.08.99	getActValue, Rückgabewert bei stop
+ * @version	1.10	12.08.99	getActValue, RÃ¼ckgabewert bei stop
  * @author Thomas Brinkhoff
  */
 public class Timer {
@@ -21,7 +21,7 @@ public class Timer {
 	
 
 /**
- * Gibt die bislang gestoppte Zeit zurück.
+ * Gibt die bislang gestoppte Zeit zurÃ¼ck.
  * @return gestoppte Zeit in Millisekunden
  * @param timer Timer-Index
  */
@@ -29,7 +29,7 @@ public static long get (int timer) {
 	return time[timer];
 }
 /**
- * Gibt die aktuelle verstrichene Zeit zurück.
+ * Gibt die aktuelle verstrichene Zeit zurÃ¼ck.
  * @return verstrichene Zeit in Millisekunden
  * @param timer Timer-Index
  */
@@ -37,7 +37,7 @@ public static long getActValue (int timer) {
 	return time[timer]+System.currentTimeMillis()-start[timer];
 }
 /**
- * Setzt den angegebenen Timer zurück.
+ * Setzt den angegebenen Timer zurÃ¼ck.
  * @param timer Timer-Index
  */
 public static void reset (int timer) {
@@ -45,14 +45,14 @@ public static void reset (int timer) {
 	start[timer] = System.currentTimeMillis();
 }
 /**
- * Startet den angegebenen Timer zurück.
+ * Startet den angegebenen Timer zurÃ¼ck.
  * @param timer Timer-Index
  */
 public static void start (int timer) {
 	start[timer] = System.currentTimeMillis();
 }
 /**
- * Stoppt den angegebenen Timer und gibt dessen Wert zurück.
+ * Stoppt den angegebenen Timer und gibt dessen Wert zurÃ¼ck.
  * @param timer Timer-Index
  */
 public static long stop (int timer) {
