@@ -13,17 +13,17 @@ import java.io.*;
 public class EntryReader extends InputStreamReader implements EntryInput {
 
 	private char buffer[] = null;					// Zeichenpuffer
-	private final int maxBufferSize = 8192;		// dessen max. Größe
+	private final int maxBufferSize = 8192;		// dessen max. GrÃ¶ÃŸe
 	private boolean eol = false;					// End of Line?
 	private boolean eof = false;					// End of Stream?
 	private boolean numErr = false;				// Numerischer Fehler?
 	private int bi = 0;								// Index auf buffer
-	private int nextEntryLength = 0;				//	Länge des nächsten Eintrags, 0 = beliebig
-	private char terminatingChar = '\t';			// Abschluß-Zeichen
+	private int nextEntryLength = 0;				//	LÃ¤nge des nÃ¤chsten Eintrags, 0 = beliebig
+	private char terminatingChar = '\t';			// AbschluÃŸ-Zeichen
 
 
 /**
- * Konstruktor für einen neuen EntryReader.
+ * Konstruktor fÃ¼r einen neuen EntryReader.
  * @param in InputStream
  */
 public EntryReader (InputStream in) {
@@ -31,21 +31,21 @@ public EntryReader (InputStream in) {
 	buffer = new char[maxBufferSize];
 }
 /**
- * Gibt zurück, ob das Ende des Streams / der Datei erreicht wurde.
+ * Gibt zurÃ¼ck, ob das Ende des Streams / der Datei erreicht wurde.
  * @return Ende erreicht?
  */
 public boolean eof () {
 	return eof;
 }
 /**
- * Gibt zurück, ob das Ende der Zeile erreicht wurde.
+ * Gibt zurÃ¼ck, ob das Ende der Zeile erreicht wurde.
  * @return Ende erreicht?
  */
 public boolean eol () {
 	return eol;
 }
 /**
- * Gibt zurück, ob bei der letzten Lese-Operation ein numerischer Fehler erfolgt ist.
+ * Gibt zurÃ¼ck, ob bei der letzten Lese-Operation ein numerischer Fehler erfolgt ist.
  * @return numerischer Fehler?
  */
 public boolean numErr () {
@@ -82,8 +82,8 @@ public char readChar () {
 	}			
 }
 /**
- * Liest eine Double-Zahl. Tritt ein Fehler auf, wird 0 zurückgegeben
- * und errNum() gibt true zurück.
+ * Liest eine Double-Zahl. Tritt ein Fehler auf, wird 0 zurÃ¼ckgegeben
+ * und errNum() gibt true zurÃ¼ck.
  * @return die gelesene Zahl
  */
 public double readDouble () {
@@ -103,8 +103,8 @@ public double readDouble () {
 	}	
 }
 /**
- * Liest eine Integer-Zahl. Tritt ein Fehler auf, wird 0 zurückgegeben
- * und errNum() gibt true zurück.
+ * Liest eine Integer-Zahl. Tritt ein Fehler auf, wird 0 zurÃ¼ckgegeben
+ * und errNum() gibt true zurÃ¼ck.
  * @return die gelesene Zahl
  */
 public int readInt () {
@@ -124,8 +124,8 @@ public int readInt () {
 	}	
 }
 /**
- * Liest eine Long-Zahl. Tritt ein Fehler auf, wird 0 zurückgegeben
- * und errNum() gibt true zurück.
+ * Liest eine Long-Zahl. Tritt ein Fehler auf, wird 0 zurÃ¼ckgegeben
+ * und errNum() gibt true zurÃ¼ck.
  * @return die gelesene Zahl
  */
 public long readLong () {
@@ -145,8 +145,8 @@ public long readLong () {
 	}	
 }
 /**
- * Liest eine Short-Zahl. Tritt ein Fehler auf, wird 0 zurückgegeben
- * und errNum() gibt true zurück.
+ * Liest eine Short-Zahl. Tritt ein Fehler auf, wird 0 zurÃ¼ckgegeben
+ * und errNum() gibt true zurÃ¼ck.
  * @return die gelesene Zahl
  */
 public short readShort () {
@@ -191,7 +191,7 @@ public String readString () {
 			bi++;
 		} while(true);
 		eol = (buffer[bi] == '\n') || (buffer[bi] == '\r');
-		// ggf. noch fehlendes \n einlesen und ggf. String zurückgeben
+		// ggf. noch fehlendes \n einlesen und ggf. String zurÃ¼ckgeben
 		int bi1 = bi;
 		bi = 0;
 		if ((!eof) && (bi1 < maxBufferSize) && (buffer[bi1] == '\r')) {
@@ -204,7 +204,7 @@ public String readString () {
 				return s;
 			}	
 		}
-		// String zurückgeben
+		// String zurÃ¼ckgeben
 		if ((!eof) || (bi1 > 0)) {
 			return new String(buffer,0,bi1);
 		}	
@@ -221,8 +221,8 @@ public String readString () {
 	}			
 }
 /**
- * Liest ein Wort, das aus 2 Byte besteht zurück.
- * Wird das Dateiende überschritten, wird 0 zurückgegeben.
+ * Liest ein Wort, das aus 2 Byte besteht zurÃ¼ck.
+ * Wird das Dateiende Ã¼berschritten, wird 0 zurÃ¼ckgegeben.
  * @return der gelesene Wert als vorzeichenbehaftete Zahl
  */
 public short readWord2 () {
@@ -231,8 +231,8 @@ public short readWord2 () {
 	return (short)((ch1 << 8) + (ch2 << 0));
 }
 /**
- * Liest ein Wort, das aus 4 Byte besteht zurück.
- * Wird das Dateiende überschritten, wird 0 zurückgegeben.
+ * Liest ein Wort, das aus 4 Byte besteht zurÃ¼ck.
+ * Wird das Dateiende Ã¼berschritten, wird 0 zurÃ¼ckgegeben.
  * @return der gelesene Wert als vorzeichenbehaftete Zahl
  */
 public int readWord4 () {
@@ -243,15 +243,15 @@ public int readWord4 () {
 	return ((ch1 << 24) + (ch2 << 16) + (ch3 << 8) + (ch4 << 0));
 }
 /**
- * Setzt die Länge des nächsten einzulesenden Eintrags.
- * @param length Eintragslänge, 0 = beliebig
+ * Setzt die LÃ¤nge des nÃ¤chsten einzulesenden Eintrags.
+ * @param length EintragslÃ¤nge, 0 = beliebig
  */
 public void setNextEntryLength (int length) {
 	nextEntryLength = length;
 }
 /**
- * Setzt das Abschlußzeichen (Default = '\t').
- * @param t Abschlußzeichen
+ * Setzt das AbschluÃŸzeichen (Default = '\t').
+ * @param t AbschluÃŸzeichen
  */
 public void setTerminatingChar (char t) {
 	terminatingChar = t;
